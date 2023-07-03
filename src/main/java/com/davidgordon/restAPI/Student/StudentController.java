@@ -1,5 +1,6 @@
 package com.davidgordon.restAPI.Student;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,12 +16,9 @@ public class StudentController {
 
     private final StudentService studentService;
 
+    @Autowired
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
-    }
-    @GetMapping("/")
-    public String home() {
-        return "Get student info at /students";
     }
 
     @GetMapping("/getStudents")

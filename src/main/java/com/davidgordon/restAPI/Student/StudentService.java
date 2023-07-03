@@ -1,9 +1,13 @@
 package com.davidgordon.restAPI.Student;
 
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class StudentService {
     public List<Student> getStudents() {
         List<Student> students = new ArrayList<>();
