@@ -1,8 +1,7 @@
 package com.davidgordon.restAPI.Student;
 
 import jakarta.persistence.*;
-
-import java.time.LocalDate;
+import java.time.*;
 
 @Entity
 @Table
@@ -84,6 +83,7 @@ public class Student {
     public void setGpa(float gpa) {
         this.gpa = gpa;
     }
+    public int getAge() { return Period.between(getDob(), LocalDate.now()).getYears(); }
 
     @Override
     public String toString() {

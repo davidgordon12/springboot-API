@@ -1,9 +1,7 @@
 package com.davidgordon.restAPI.Student;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpClientErrorException;
 
 import java.time.LocalDate;
@@ -30,5 +28,12 @@ public class StudentController {
         }
 
         return students;
+    }
+
+    @PostMapping("/addStudent")
+    public Student addStudent(@RequestBody Student student) {
+        studentService.addStudent(student);
+
+        return student;
     }
 }
