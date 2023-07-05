@@ -1,8 +1,25 @@
 package com.davidgordon.restAPI.Student;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
+@Entity
+@Table
 public class Student {
+    @Id
+
+    @SequenceGenerator(
+            name = "student_sequence",
+            sequenceName = "student,sequence",
+            allocationSize = 1
+    )
+
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "student_sequence"
+    )
+
     private int id;
     private String firstName;
     private String lastName;
