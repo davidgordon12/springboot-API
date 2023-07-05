@@ -24,15 +24,15 @@ public class StudentService {
                 2,
                 "Jane",
                 "Doe",
-                LocalDate.of(2001, 01, 19),
+                LocalDate.of(2001, 1, 19),
                 4.0f
         ));
 
         students.add(new Student (
-                2,
+                3,
                 "Billy",
                 "Bob",
-                LocalDate.of(1999, 04, 27),
+                LocalDate.of(1999, 4, 27),
                 2.8f
         ));
 
