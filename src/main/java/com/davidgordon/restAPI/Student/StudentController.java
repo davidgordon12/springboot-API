@@ -21,24 +21,24 @@ public class StudentController {
 
     @GetMapping("/getStudents")
     public List<Student> getStudents() {
-        List<Student> students = studentService.getStudents();
-
-        if(students.size() == 0) {
-            return new ArrayList<>();
-        }
-
-        return students;
+        return studentService.getStudents();
     }
 
     @PostMapping("/addStudent")
     public Student addStudent(@RequestBody Student student) {
-        studentService.addStudent(student);
-
-        return student;
+        return studentService.addStudent(student);
     }
 
     @DeleteMapping({"deleteStudent/{id}"})
-    public void deleteStudent(@PathVariable("id") Integer id) {
-        studentService.deleteStudent(id);
+    public Student deleteStudent(@PathVariable("id") Integer id) {
+        return studentService.deleteStudent(id);
+    }
+
+    @PutMapping({"updateGPA/{id}/{gpa}"})
+    public Student updateStudent(
+            @PathVariable("id") Integer id,
+            @PathVariable("gpa") Float gpa) {
+
+        return studentService.updateStudentGPA(id, gpa);
     }
 }
