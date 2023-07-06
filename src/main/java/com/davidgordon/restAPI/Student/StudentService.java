@@ -32,4 +32,15 @@ public class StudentService {
 
         return student;
     }
+
+    public void deleteStudent(Integer id) {
+        Optional<Student> studentOptional = studentRepository.findById(id);
+
+        if(!studentOptional.isPresent()) {
+            throw new IllegalStateException("Student with id" + id + " does not exist");
+        }
+        else {
+            studentRepository.deleteById(id);
+        }
+    }
 }
